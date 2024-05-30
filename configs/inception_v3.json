@@ -1,0 +1,29 @@
+{
+    "model_path": "model_zoo_paddle/models/InceptionV3_infer",
+    "model": "inception_v3",
+    "framework": "PaddlePaddle",
+    "nnf_version": "v1.8.1",
+    "model_format": "paddlepaddle",
+    "trans_format": "onnx",
+    "inputs": "x",
+    "outputs": "softmax_1.tmp_0",
+    "input_shape": {
+        "x": [
+            "best_batch",
+            3, 
+            299,
+            299
+        ]
+    },
+    "input_type": "FLOAT32",
+    "layout": "NCHW",
+    "dataset_name": "open_imagenet",
+    "best_batch": 1,
+    "get_top5": true,
+    "preprocess_num": 50,
+    "model_precision": "FLOAT32",
+    "best_thread_num": 16,
+    "dataset_map": {
+        "image": "x"
+    }
+}

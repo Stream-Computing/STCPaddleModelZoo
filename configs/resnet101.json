@@ -1,0 +1,27 @@
+{
+    "model_path": "model_zoo_paddle/models/ResNet101_infer",
+    "model": "resnet101",
+    "framework": "PaddlePaddle",
+    "nnf_version": "v1.8.1",
+    "model_format": "paddlepaddle",
+    "trans_format": "onnx",
+    "inputs": "inputs",
+    "outputs": "save_infer_model/scale_0.tmp_1",
+    "input_shape": {
+        "inputs": [
+            "best_batch",
+            3,
+            224,
+            224
+        ]
+    },
+    "input_type": "FLOAT32",
+    "layout": "NCHW",
+    "dataset_name": "open_imagenet",
+    "best_batch": 16,
+    "model_precision": "FLOAT32",
+    "best_thread_num": 8,
+    "dataset_map": {
+        "image": "inputs"
+    }
+}
