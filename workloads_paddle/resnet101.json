@@ -1,0 +1,11 @@
+{
+    "model": "resnet101",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": false,
+    "remote": false,
+    "data_percent": 20,
+    "compile_only": false,
+    "batch_random": 130,
+    "batch_fix": 512
+}

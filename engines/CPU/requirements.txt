@@ -1,0 +1,14 @@
+matplotlib
+sklearn
+opencv-python-headless
+transformers
+tokenization
+torchvision
+onnx
+onnxruntime
+torch==1.12.1
+six==1.15.0
+tensorflow==2.4.0
+sentencepiece==0.1.96
+numpy
+bert-tensorflow==1.0.1

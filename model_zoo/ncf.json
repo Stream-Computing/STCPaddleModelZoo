@@ -1,0 +1,24 @@
+{
+    "model_path": "model_zoo_paddle/models/ncf/ncf.onnx",
+    "model": "NCF",
+    "framework": "Onnx",
+    "nnf_version": "v1.8.1",
+    "model_format": "onnx",
+    "trans_format": "onnx",
+    "inputs": "x",
+    "outputs": "save_infer_model/scale_0.tmp_0",
+    "input_shape": {
+        "x": [
+            "best_batch",
+            32,
+            16,
+            8
+        ]
+    },
+    "input_type": "INT32",
+    "layout": "NCHW",
+    "dataset_name": "fake_dataset",
+    "best_batch": 64,
+    "model_precision": "FLOAT32",
+    "best_thread_num": 4
+}

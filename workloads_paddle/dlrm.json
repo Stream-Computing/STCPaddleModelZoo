@@ -1,0 +1,11 @@
+{
+    "model": "dlrm",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": true,
+    "remote": false,
+    "data_percent": 20,
+    "compile_only": false,
+    "batch_random": 130,
+    "batch_fix": 32768
+}

@@ -1,0 +1,12 @@
+{
+    "model": "meter",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": true,
+    "remote": false,
+    "batch_total": false,
+    "iterations": 1,
+    "data_percent": 10,
+    "batch_fix": 64,
+    "compile_only": false
+}
