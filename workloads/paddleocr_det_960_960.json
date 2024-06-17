@@ -1,0 +1,15 @@
+{
+    "model": "paddleocr_det_960_960",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": true,
+    "remote": false,
+    "batch_total": false,
+    "iterations": 1,
+    "batch_sizes": [
+        1
+    ],
+    "data_percent": 10,
+    "batch_fix": 512,
+    "compile_only": false
+}

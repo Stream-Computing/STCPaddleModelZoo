@@ -1,0 +1,20 @@
+{
+    "model": "swin_transformer",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": false,
+    "remote": false,
+    "data_percent": 100,
+    "compile_only": false,
+    "batch_random": 130,
+    "batch_fix": 64,
+    "base_line": {
+        "performance": {
+            "FPS": 1636.2
+        },
+        "accuracy": {
+            "Top-1": 0.812,
+            "Top-5": 0.9551799999999999
+        }
+    }
+}

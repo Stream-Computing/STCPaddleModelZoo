@@ -16,7 +16,7 @@ def get_config(json_path):
 
 
 def check_config(model_name):
-    model_config_path = "model_zoo_paddle/{}.json".format(model_name)
+    model_config_path = "model_zoo/{}.json".format(model_name)
     if not os.path.exists(model_config_path):
         print("model config {} not found !".format(model_config_path))
         exit(1)
@@ -65,7 +65,7 @@ def after_timeout():
         os.kill(int(pid),  signal.SIGKILL)
     print("engine_compile Time out!")
 
-@set_timeout(after_timeout)
+# @set_timeout(after_timeout)
 def engine_compile(model_info, compile_out_path):
     model_convert(model_info)
     t0 = time.time()

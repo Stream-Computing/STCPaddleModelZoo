@@ -1,0 +1,20 @@
+{
+    "model": "pose_hrnet_w32",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": true,
+    "remote": false,
+    "batch_total": false,
+    "iterations": 1,
+    "batch_fix": 32,
+    "data_percent": 100,
+    "compile_only": false,
+    "base_line": {
+        "performance": {
+            "FPS": 254.9
+        },
+        "accuracy": {
+            "Fake Dataset Accuracy": 0.0
+        }
+    }
+}

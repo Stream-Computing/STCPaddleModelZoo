@@ -1,0 +1,12 @@
+{
+    "model": "mmoe_XL",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": true,
+    "remote": false,
+    "batch_total": false,
+    "iterations": 1,
+    "data_percent": 10,
+    "compile_only": false,
+    "batch_fix": 32768
+}

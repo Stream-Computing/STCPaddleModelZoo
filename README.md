@@ -1,92 +1,41 @@
-# STCPaddleModelZoo
+# PaddlePaddle Streamcomputing Model Zoo
+### 🤝 百度飞桨 x 希姆计算AI模型库
+* 兼容性适配：目前希姆计算与百度飞桨深度学习框架已完成I级兼容性适配认证，支持当下主流模型应用场景，覆盖了计算机视觉、智能语音、自然语言处理、推荐等领域，支持当下主流模型数量10+;
+* 一键启动：通过兼容飞桨推理接口，用户通过指定run_model()接口一键启动推理模型，并部署在希姆NPU上执行;
+* 性能评估：run_model()接口默认开启性能评估功能，用户可通过指定参数对模型进行性能评估;
+* 支持拓展：用户可自行准备飞桨预训练inference模型，通过希姆NPU实现加速推理;
+* 其他特性：有关run_model()接口的是详细使用方法可参考[Paddle-STCNNE](Paddle-STCNNE.md);
+        
+### 📦 模型信息
+| Models	                    | Evaluate Datasets|Input shape	| Acc(paddle)|Acc(STC NPU)|	Latency(s)(STC NPU) | Inference Model 
+|-------------------------------|-------------------|-----------|------------------|------------------------|--------------------------|--------------|
+|ResNet34	                    |ImageNet1k	     |1x3x224x224   |0.7457	                |0.7578	            |0.07 | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|ResNet50	                |ImageNet1k	     |1x3x224x224   |0.7566	                |0.7549	            |0.959    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|ResNet101        	                |ImageNet1k	     |1x3x224x224   |0.7756               |0.7749	            |0.1051 | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|DenseNet121	                        |ImageNet1k	     |1x3x224x224   |0.7566	                |0.7753	            |0.0845   | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|VGG16	                    |ImageNet1k	     |1x3x224x224   | 0.72	                |0.7226	            |0.4364 | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|EfficientNetB0	                        |ImageNet1k	     |1x3x224x224   |0.7738	                |0.8046	            |0.1258   | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|EfficientNetB1        	            |ImageNet1k	     |1x3x224x224   |0.7915	                |0.8203	            |0.166     | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|EfficientNetB5	                        |ImageNet1k	     |1x3x224x224   | 0.7215	                |0.8203	            |0.0395     | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|ShuffleNetV2_x1_0	                        |ImageNet1k	     |1x3x224x224   |0.688                |0.6972	            |0.04    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )  
+|SlowFast	                |ImageNet1k	     |1x3x224x224   |74.35	                |74.99	            |0.03      | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )   
+|NCF	                    |ImageNet1k	     |1x3x224x224   |HR@10：0.58NDCG@10：0.33|HR@10：0.60NDCG@10：0.33	            |0.01      | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|DeepFM	                    |ImageNet1k	     |1x3x224x224   |0.78                |0.7745	            |0.044     | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 ) 
+|DIEN	                |ImageNet1k	     |1x3x224x224   |0.7133	                |0.71332	            |2.968     | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )   
+|MMOE	                |ImageNet1k	     |1x3x224x224   |0.99                |0.9922            |0.0021    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )   
+|DLRM	                |ImageNet1k	     |1x3x224x224   |0.79               |0.7869	            |0.01      | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )   
+### 🎈 推理预测
+#### 以图像分类为例简要介绍模型使用方法，其他模型场景详细用法请参考飞桨官方模型库：
 
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+##### 1.模型准备： 通过链接下载希姆飞桨ImageNet1K图像分类模型，例如 MobileNetV3.pdmodel 、 MobileNetV3.pdiparams，文件夹放到model_zoo目录下
+##### 2.数据准备： 输入图像应符合NCHW Format , Shape 为 [1,3,224,224]，也可以通过链接下载数据集，将数据集文件夹中的文件下载后放到datasets目录下
+##### 3.模型编译：
+```bash
+python3 compile_model.py -m  ${MODEL_NAME}
 ```
-cd existing_repo
-git remote add origin http://code.streamcomputing.com/stc_github/STCPaddleModelZoo.git
-git branch -M master
-git push -uf origin master
+##### 3.执行推理：
+```bash
+python3 run_model.py  -m  ${MODEL_NAME}
 ```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](http://code.streamcomputing.com/stc_github/STCPaddleModelZoo/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+模型文件和数据集自动从model_zoo/${MODEL_NAME}.json中加载。
+##### 4.获取最终推理结果，如图像类别、OCR检测结果等，可参考飞桨模型库相关代码     

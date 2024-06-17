@@ -1,0 +1,4 @@
+tensorflow==2.4.0
+tf2onnx
+numpy
+torch==1.12.1
