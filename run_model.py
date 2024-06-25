@@ -30,7 +30,7 @@ def get_config(json_path):
 
 
 def check_config(model_name):
-    model_config_path = "model_zoo_paddle/{}.json".format(model_name)
+    model_config_path = "model_zoo/{}.json".format(model_name)
     workloads_config_path = "workloads_paddle/{}.json".format(model_name)
     if not os.path.exists(model_config_path) or not os.path.exists(model_config_path):
         print("model config not found !")

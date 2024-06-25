@@ -1,24 +1,26 @@
 {
-    "model_path": "model_zoo_paddle/models/ncf/ncf.onnx",
-    "model": "NCF",
-    "framework": "Onnx",
+    "model_path": "model_zoo/models/NCF_infer",
+    "model": "ncf",
+    "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",
-    "model_format": "onnx",
+    "model_format": "paddlepaddle",
     "trans_format": "onnx",
-    "inputs": "x",
-    "outputs": "save_infer_model/scale_0.tmp_0",
+    "inputs": "user_input,item_input",
+    "outputs": "prediction",
     "input_shape": {
-        "x": [
+        "user_input": [
             "best_batch",
-            32,
-            16,
-            8
+            1
+        ],
+        "item_input": [
+            "best_batch",
+            1
         ]
     },
-    "input_type": "INT32",
+    "input_type": "INT32,INT32",
     "layout": "NCHW",
     "dataset_name": "fake_dataset",
-    "best_batch": 64,
+    "best_batch": 32768,
     "model_precision": "FLOAT32",
     "best_thread_num": 4
 }

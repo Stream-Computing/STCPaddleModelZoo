@@ -1,5 +1,5 @@
 {
-    "model_path": "model_zoo_paddle/models/ResNet34_infer",
+    "model_path": "model_zoo/models/ResNet34_infer",
     "model": "resnet34",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",

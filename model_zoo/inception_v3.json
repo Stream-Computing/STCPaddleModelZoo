@@ -1,5 +1,5 @@
 {
-    "model_path": "model_zoo_paddle/models/InceptionV3_infer",
+    "model_path": "model_zoo/models/InceptionV3_infer",
     "model": "inception_v3",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",

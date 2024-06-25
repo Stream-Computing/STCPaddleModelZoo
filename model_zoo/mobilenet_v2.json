@@ -1,5 +1,5 @@
 {
-    "model_path": "model_zoo_paddle/models/MobileNetV2_infer",
+    "model_path": "model_zoo/models/MobileNetV2_infer",
     "model": "mobilenet_v2",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",

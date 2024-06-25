@@ -1,5 +1,5 @@
 {
-    "model_path": "model_zoo_paddle/models/ShuffleNetV2_x1_0_infer",
+    "model_path": "model_zoo/models/ShuffleNetV2_x1_0_infer",
     "model": "shufflenet_v2_x1_0",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",

@@ -1,5 +1,5 @@
 {
-    "model_path": "model_zoo_paddle/models/EfficientNetB5_infer",
+    "model_path": "model_zoo/models/EfficientNetB5_infer",
     "model": "efficientnet_b5",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",
