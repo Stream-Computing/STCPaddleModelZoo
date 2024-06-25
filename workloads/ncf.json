@@ -1,5 +1,5 @@
 {
-    "model": "NCF",
+    "model": "ncf",
     "test_perf": true,
     "test_accuracy": true,
     "test_numeric": true,
@@ -8,5 +8,5 @@
     "iterations": 1,
     "data_percent": 10,
     "compile_only": false,
-    "batch_fix": 262144
+    "batch_fix": 32768
 }

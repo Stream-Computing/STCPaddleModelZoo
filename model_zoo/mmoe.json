@@ -1,26 +1,22 @@
 {
-    "model_path": "model_zoo/models/ncf",
-    "model": "ncf",
+    "model_path": "model_zoo/models/mmoe",
+    "model": "mmoe",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",
     "model_format": "paddlepaddle",
     "trans_format": "onnx",
-    "inputs": "user_input,item_input",
-    "outputs": "prediction",
+    "inputs": "input_1",
+    "outputs": "income,marital",
     "input_shape": {
-        "user_input": [
+        "input_1": [
             "best_batch",
-            1
-        ],
-        "item_input": [
-            "best_batch",
-            1
+            499
         ]
     },
-    "input_type": "INT64,INT64",
+    "input_type": "FLOAT32",
     "layout": "NCHW",
     "dataset_name": "fake_dataset",
-    "best_batch": 32768,
+    "best_batch": 2048,
     "model_precision": "FLOAT32",
     "best_thread_num": 4
 }
