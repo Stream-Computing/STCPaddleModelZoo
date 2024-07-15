@@ -19,7 +19,7 @@
     },
     "input_type": "INT64,INT64",
     "layout": "NCHW",
-    "dataset_name": "fake_dataset",
+    "dataset_name": "open_criteo_kaggle",
     "best_batch": 32768,
     "model_precision": "FLOAT32",
     "best_thread_num": 4
