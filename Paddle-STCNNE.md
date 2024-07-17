@@ -6,7 +6,7 @@ STCPaddleModelZoo使用说明是希姆计算提供的一个机器学习基准测
 - 尽量做到模型和框架分离，方便模型从框架中单独抽离。
 - 功能模块简单，易维护，易定位，遇到问题时能快速找到问题模块。
 ## 前提条件（如使用内部环境可跳过此步）
-- 已安装docker, docker镜像为：。
+- 已安装docker, docker镜像为：harbor.streamcomputing.com/tb_ci/hsmlperf_runner:v1.1。
 - 已安装TensorTurbo，且版本不低于TensorTurbo 1.10, 安装包位于：/home/gitlab-runner/paddlepackage，安装方法：pip3 install tb_ubuntu2004-1.12.0-cp37-cp37m-linux_x86_64.whl --force-reinstall。
 - 已安装STC_DDK。安装包位于：/home/gitlab-runner/paddlepackage，安装方法：pip3 install stc_ddk-1.2.0-cp37-cp37m-linux_x86_64.whl --force-reinstall。
 - 已获取STCPaddleModelZoo代码仓的下载权限。
