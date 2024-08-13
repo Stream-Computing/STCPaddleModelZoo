@@ -5,12 +5,12 @@ STCPaddleModelZoo使用说明是希姆计算提供的一个机器学习基准测
 - 降低部署复杂度，用户只需添加模型配置信息、模型任务执行配置信息和数据集信息即可执行模型推理任务。
 - 尽量做到模型和框架分离，方便模型从框架中单独抽离。
 - 功能模块简单，易维护，易定位，遇到问题时能快速找到问题模块。
-## 前提条件（如使用内部环境可跳过此步）
-- 已安装docker, docker镜像为：stc_paddlepaddle_test:v1.0。
-- 已安装TensorTurbo，且版本不低于TensorTurbo 1.10, 安装包位于：/home/gitlab-runner/paddlepackage，安装方法：pip3 install tb_ubuntu2004-1.12.0-cp37-cp37m-linux_x86_64.whl --force-reinstall。
-- 已安装STC_DDK。安装包位于：/home/gitlab-runner/paddlepackage，安装方法：pip3 install stc_ddk-1.2.0-cp37-cp37m-linux_x86_64.whl --force-reinstall。
+## 前提条件
+- 已安装Python 3.7。
+- 已安装TensorTurbo，且版本不低于TensorTurbo 1.10。安装TensorTurbo的详细步骤，请参见异构环境安装指南。
+- 已安装STC_DDK。安装的详细步骤，请参见STC_DDK使用指南。
 - 已获取STCPaddleModelZoo代码仓的下载权限。
-## 源码安装STCPaddleModelZoo（如使用内部环境可跳过此步）
+## 源码安装STCPaddleModelZoo
 1. 下载STCPaddleModelZoo的源码。
 $ git clone --recursive git@github.com:Stream-Computing/STCPaddleModelZoo.git
 $ cd STCPaddleModelZoo
@@ -74,17 +74,19 @@ $  ./run_engine_install.sh
 | ddk_config | ddk配置文件路径 | 否 | str | model_zoo/models/2D_Unet/config.json |
 | input_range | 如果dataset_name是null，采用fake_dataset运行模型，需要指明每个输入数据的数据范围 | 否 | dict{str:list[min_val, max_val]} | {"input_ids.1": [1,100], "attention_mask.1": [1,100], "token_type_ids.1": [1,100]} |
 | best_thread_num | 最优性能下的线程数 | 否 | int | 8 |
+
 3. 数据集名称对应关系表
-| 数据集名称	  | 输入名|数据集输出数量|
+```
+| 数据集名称	  | 输入名 | 数据集输出数量 |
 |-------------------|-----------|------------------|
 | open_cail2019 | batch_token_ids、batch_segment_ids|  1 |
 | open_cifar |  	image、text | 2 |
 | open_criteo_kaggle | new_categorical_placeholder、new_numeric_placeholder | 1 |
 | open_imagenet | image | 1 |
 | open_squad | input_ids、input_mask、segment_ids | 2 |
+```
 说明：如果模型不需要3个输入，可以根据实际情况输入。
 4. 在STCPaddleModelZoo/workloads目录下，上传包含模型任务执行相关信息的resnet50.json文件，文件格式参考如下：
-```
 {
     "model": "resnet50",
     "test_perf": true,
@@ -95,10 +97,11 @@ $  ./run_engine_install.sh
     "batch_fix": 6400,
     "data_percent": 100,
     "compile_only": false
-}      
-```     
-|  参数	   |  说明              |是否必选|数据类型|示例|	    
+}   
+```        
+| 参数	  | 说明|是否必选|数据类型|示例|	    
 |---------|-------------------|-----------|------------------|----------|
+
 | model      | 模型名，需要跟modelzoo配置文件中的模型名相同 | 是 | str | resnet50 |
 | test_perf  | 是否测试性能 | 是 | bool | true |
 | test_accuracy | 是否测试模型的精度 | 是 | bool | true |
@@ -108,10 +111,8 @@ $  ./run_engine_install.sh
 | batch_fix | 进行模型性能测试时，采用固定的batch打包方式时使用的固定的batch数量 | 否 | int | 6400 |
 | data_percent | 执行模型推理任务使用的数据集占比，最低不低于1个batch | 是 | int | 10 |
 | compile_only | 是否只进行模型编译 | 是 | bool | true |
-
+```
 5. 在STCPaddleModelZoo工程目录下执行以下命令，获取推理结果。
-```
 $ python3 run_model.py -m ${model_name} 
-```
 6. 执行完成后，可以在屏显看到推理结果。
 注：其中表格中samples/sec 字段代表图片处理速度、sample_num字段代表图片的数量、avg_latency字段代表平均时延(单位s)、Top-1_acc字段代表该模型精度结果。

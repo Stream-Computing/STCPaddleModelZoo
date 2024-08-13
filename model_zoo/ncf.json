@@ -1,5 +1,5 @@
 {
-    "model_path": "model_zoo/models/ncf",
+    "model_path": "model_zoo/models/NCF_infer",
     "model": "ncf",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",
@@ -17,7 +17,7 @@
             1
         ]
     },
-    "input_type": "INT64,INT64",
+    "input_type": "INT32,INT32",
     "layout": "NCHW",
     "dataset_name": "open_criteo_kaggle",
     "best_batch": 32768,
