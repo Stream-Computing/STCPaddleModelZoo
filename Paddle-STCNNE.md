@@ -87,6 +87,7 @@ $  ./run_engine_install.sh
 ```
 说明：如果模型不需要3个输入，可以根据实际情况输入。
 4. 在STCPaddleModelZoo/workloads目录下，上传包含模型任务执行相关信息的resnet50.json文件，文件格式参考如下：
+```
 {
     "model": "resnet50",
     "test_perf": true,
@@ -98,7 +99,8 @@ $  ./run_engine_install.sh
     "data_percent": 100,
     "compile_only": false
 }   
-```        
+```     
+```   
 | 参数	  | 说明|是否必选|数据类型|示例|	    
 |---------|-------------------|-----------|------------------|----------|
 
@@ -113,6 +115,8 @@ $  ./run_engine_install.sh
 | compile_only | 是否只进行模型编译 | 是 | bool | true |
 ```
 5. 在STCPaddleModelZoo工程目录下执行以下命令，获取推理结果。
+```
 $ python3 run_model.py -m ${model_name} 
+```
 6. 执行完成后，可以在屏显看到推理结果。
 注：其中表格中samples/sec 字段代表图片处理速度、sample_num字段代表图片的数量、avg_latency字段代表平均时延(单位s)、Top-1_acc字段代表该模型精度结果。
