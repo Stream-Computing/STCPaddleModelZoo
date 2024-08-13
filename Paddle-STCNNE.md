@@ -75,8 +75,9 @@ $  ./run_engine_install.sh
 | input_range | 如果dataset_name是null，采用fake_dataset运行模型，需要指明每个输入数据的数据范围 | 否 | dict{str:list[min_val, max_val]} | {"input_ids.1": [1,100], "attention_mask.1": [1,100], "token_type_ids.1": [1,100]} |
 | best_thread_num | 最优性能下的线程数 | 否 | int | 8 |
 3. 数据集名称对应关系表
-| 数据集名称	  | 输入名 | 数据集输出数量 |
-|-------------------|-----------|------------------|
+
+| 数据集名称 | 输入名 | 数据集输出数量 |
+|---------|-------------------|-----------|
 | open_cail2019 | batch_token_ids、batch_segment_ids|  1 |
 | open_cifar |  	image、text | 2 |
 | open_criteo_kaggle | new_categorical_placeholder、new_numeric_placeholder | 1 |
