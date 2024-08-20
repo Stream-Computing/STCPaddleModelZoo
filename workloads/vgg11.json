@@ -1,5 +1,5 @@
 {
-    "model": "densenet121",
+    "model": "vgg11",
     "test_perf": true,
     "test_accuracy": true,
     "test_numeric": false,

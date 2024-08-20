@@ -4,7 +4,7 @@
     "test_accuracy": true,
     "test_numeric": false,
     "remote": false,
-    "data_percent": 10,
+    "data_percent": 100,
     "compile_only": false,
     "batch_random": 130,
     "batch_fix": 512

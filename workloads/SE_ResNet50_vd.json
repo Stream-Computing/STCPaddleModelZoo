@@ -1,5 +1,5 @@
 {
-    "model": "densenet121",
+    "model": "SE_ResNet50_vd",
     "test_perf": true,
     "test_accuracy": true,
     "test_numeric": false,

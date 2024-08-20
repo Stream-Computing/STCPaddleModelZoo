@@ -1,5 +1,5 @@
 {
-    "model": "densenet121",
+    "model": "densenet169",
     "test_perf": true,
     "test_accuracy": true,
     "test_numeric": false,
