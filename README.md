@@ -27,6 +27,8 @@
 |SE_ResNet18_vd	                        |ImageNet1k	     |1x3x224x224   |0.7333                |0.7269	            |0.067    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )  
 |SE_ResNet34_vd	                        |ImageNet1k	     |1x3x224x224   |0.7651                |0.7599	            |0.0972    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )  
 |SE_ResNet50_vd	                        |ImageNet1k	     |1x3x224x224   |0.7952                |0.7915	            |0.229    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )  
+|dbnet_mv3	                        |ICDAR2015	     |1x3x224x224   |0.7512                |0.7402	            |0.8477    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )  
+|dbnet_resnet50_vd	                        |ICDAR2015	     |1x3x224x224   |0.8238                |0.8219	            |3.4099    | [inference_model](https://pan.baidu.com/s/1nT_1K7kdjs6Ydq2Ctdyxzw?pwd=x033 )  
 ### 🎈 推理预测
 #### 以图像分类为例简要介绍模型使用方法，其他模型场景详细用法请参考飞桨官方模型库：
 

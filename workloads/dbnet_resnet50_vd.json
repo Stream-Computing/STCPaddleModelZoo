@@ -1,0 +1,21 @@
+{
+    "model": "dbnet_resnet50_vd",
+    "test_perf": true,
+    "test_accuracy": true,
+    "test_numeric": false,
+    "remote": false,
+    "batch_total": false,
+    "iterations": 1,
+    "batch_fix": 64,
+    "data_percent": 100,
+    "compile_only": false,
+    "base_line": {
+        "performance": {
+            "FPS": 27.1
+        },
+        "accuracy": {
+            "recall": 0.7891189215214252,
+            "hmean": 0.8236180904522612
+        }
+    }
+}

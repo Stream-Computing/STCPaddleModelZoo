@@ -1,5 +1,5 @@
 {
-    "model_path": "model_zoo_paddle/models/VGG13_infer",
+    "model_path": "model_zoo/models/VGG13_infer",
     "model": "vgg13",
     "framework": "PaddlePaddle",
     "nnf_version": "v1.8.1",

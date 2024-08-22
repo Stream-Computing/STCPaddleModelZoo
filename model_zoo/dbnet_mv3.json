@@ -1,0 +1,27 @@
+{
+    "model_path": "model_zoo/models/det_mv3_db_inference",
+    "model": "dbnet_mv3",
+    "framework": "PaddlePaddle",
+    "nnf_version": "v1.8.1",
+    "model_format": "paddlepaddle",
+    "trans_format": "onnx",
+    "inputs": "x",
+    "outputs": "sigmoid_0.tmp_0",
+    "input_shape": {
+        "x": [
+            "best_batch",
+            3,
+            736,
+            1280
+        ]
+    },
+    "input_type": "FLOAT32",
+    "layout": "NCHW",
+    "dataset_name": "test_icdar2015",
+    "best_batch": 1,
+    "model_precision": "FLOAT32",
+    "dataset_map": {
+        "image": "x"
+    },
+    "best_thread_num": 16
+}
